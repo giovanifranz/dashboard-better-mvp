@@ -1,5 +1,5 @@
-import { Flex, Button, Stack } from '@chakra-ui/react'
-import { Input } from '../components'
+import { Flex, Button, Stack } from "@chakra-ui/react";
+import { Input } from "../components";
 
 export default function SignIn() {
   return (
@@ -27,5 +27,5 @@ export default function SignIn() {
         </Button>
       </Flex>
     </Flex>
-  )
+  );
 }
