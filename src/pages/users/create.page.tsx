@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Heading,
   Divider,
   VStack,
   SimpleGrid,
@@ -9,18 +8,15 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import { Input } from "../../components";
+import { Input, Heading } from "../../components";
 import { UserLayout } from "./UserLayout";
 
 export default function UserCreate() {
   return (
     <Box>
       <UserLayout>
-        <Heading size="lg" fontWeight="normal">
-          Criar usuário
-        </Heading>
+        <Heading title="Criar usuário" />
         <Divider my="6" borderColor="gray.700" />
-
         <VStack spacing="8">
           <SimpleGrid minChildWidth={240} spacing="8" width="100%">
             <Input name="name" label="Nome completo" />
@@ -35,7 +31,6 @@ export default function UserCreate() {
             />
           </SimpleGrid>
         </VStack>
-
         <Flex mt="8" justify="flex-end">
           <HStack>
             <Button colorScheme="whiteAlpha">Cancelar</Button>

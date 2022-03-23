@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Heading,
   Button,
   Icon,
   Table,
@@ -14,16 +13,15 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
-import { Pagination } from "../../components";
+import { Pagination, Heading } from "../../components";
 import { UserLayout } from "./UserLayout";
+
 export default function UserList() {
   return (
     <Box>
       <UserLayout>
         <Flex mb="8" justify="space-between" align="center">
-          <Heading size="lg" fontWeight="normal">
-            Listagem de usuários
-          </Heading>
+          <Heading title="Listagem de usuários" />
           <Button
             as="a"
             size="sm"
