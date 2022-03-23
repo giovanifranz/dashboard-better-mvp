@@ -1,9 +1,14 @@
 import { Flex, useBreakpointValue } from "@chakra-ui/react";
 import { Logo, NotificationsNav, Profile } from ".";
+import type { BurguerMenuProps } from "./BurguerMenu";
 import dynamic from "next/dynamic";
 
 const SearchBox = dynamic<EmptyObject>(() =>
   import("./SearchBox").then((module) => module.SearchBox)
+);
+
+const BurguerMenu = dynamic<BurguerMenuProps>(() =>
+  import("./BurguerMenu").then((module) => module.BurguerMenu)
 );
 
 function Header() {
@@ -22,6 +27,7 @@ function Header() {
       mx="auto"
       align="center"
     >
+      <BurguerMenu showBurguerMenu={isWideVersion} />
       <Logo />
       <SearchBox />
       <Flex align="center" ml="auto">

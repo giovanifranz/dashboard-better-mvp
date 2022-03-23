@@ -8,7 +8,7 @@ interface Props extends LinkProps {
 
 function NavLink({ icon, text, ...rest }: Props) {
   return (
-    <Link display="flex" alignItems="center" color="pink.400" {...rest}>
+    <Link display="flex" alignItems="center" /*color="pink.400"*/ {...rest}>
       <Icon as={icon} fontSize="20" />
       <Text ml="4" fontSize="medium">
         {text}
