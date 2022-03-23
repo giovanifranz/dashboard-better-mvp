@@ -1,14 +1,20 @@
-import { Flex, Box, Text, Avatar } from "@chakra-ui/react";
+import { Flex, Avatar } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
+import type { ProfileDataProps } from ".";
 
-function Profile() {
+const ProfileData = dynamic<ProfileDataProps>(() =>
+  import("./ProfileData").then((module) => module.ProfileData)
+);
+interface Props {
+  showProfileData?: boolean;
+}
+
+function Profile({ showProfileData = true }: Props) {
   return (
     <Flex align="center">
-      <Box mr="4" textAlign="right">
-        <Text>Giovani Franz</Text>
-        <Text color="gray.300" fontSize="small">
-          Giovanifranz151@gmail.com
-        </Text>
-      </Box>
+      {showProfileData && (
+        <ProfileData name="Giovani Franz" email="Giovanifranz151@gmail.com" />
+      )}
       <Avatar
         size="md"
         name="Giovani Franz"
