@@ -14,7 +14,7 @@ interface Props {
   isCurrent?: boolean;
 }
 
-function PaginationItem({ number, isCurrent }: Props) {
+function PaginationItem({ number, isCurrent = false }: Props) {
   return isCurrent ? (
     <CurrentButton number={number} />
   ) : (
