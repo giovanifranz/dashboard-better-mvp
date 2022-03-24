@@ -11,17 +11,31 @@ import {
   Tbody,
   Td,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-import { RiAddLine, RiPencilLine } from "react-icons/ri";
+import { RiAddLine } from "react-icons/ri";
 import { Pagination, Heading } from "../../components";
 import { UserLayout } from "./UserLayout";
+import dynamic from "next/dynamic";
+import { Fragment } from "react";
+
+const EditTableButton = dynamic<EmptyObject>(() =>
+  import("../../components/EditTableButton").then(
+    (module) => module.EditTableButton
+  )
+);
 
 export default function UserList() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box>
       <UserLayout>
         <Flex mb="8" justify="space-between" align="center">
-          <Heading title="Listagem de usuários" />
+          <Heading title="Usuários" />
           <Button
             as="a"
             size="sm"
@@ -35,17 +49,17 @@ export default function UserList() {
         <Table colorScheme="whiteAlpha">
           <Thead>
             <Tr>
-              <Th px="6" color="gray.300" width="8">
+              <Th px={["4", "4", "6"]} color="gray.300" width="8">
                 <Checkbox colorScheme="pink" />
               </Th>
               <Th>Usuário</Th>
-              <Th>Data de Cadastro</Th>
+              {isWideVersion && <Th>Data de Cadastro</Th>}
               <Th width="8" />
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
-              <Td px="6">
+              <Td px={["4", "4", "6"]}>
                 <Checkbox colorScheme="pink" />
               </Td>
               <Td>
@@ -56,21 +70,14 @@ export default function UserList() {
                   </Text>
                 </Box>
               </Td>
-              <Td>04 de janeiro de 2020</Td>
-              <Td>
-                <Button
-                  as="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="purple"
-                  leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                >
-                  Editar
-                </Button>
-              </Td>
+              {isWideVersion && (
+                <Fragment>
+                  <Td>04 de janeiro de 2020</Td> <EditTableButton />
+                </Fragment>
+              )}
             </Tr>
             <Tr>
-              <Td px="6">
+              <Td px={["4", "4", "6"]}>
                 <Checkbox colorScheme="pink" />
               </Td>
               <Td>
@@ -81,21 +88,14 @@ export default function UserList() {
                   </Text>
                 </Box>
               </Td>
-              <Td>04 de janeiro de 2020</Td>
-              <Td>
-                <Button
-                  as="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="purple"
-                  leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                >
-                  Editar
-                </Button>
-              </Td>
+              {isWideVersion && (
+                <Fragment>
+                  <Td>04 de janeiro de 2020</Td> <EditTableButton />
+                </Fragment>
+              )}
             </Tr>
             <Tr>
-              <Td px="6">
+              <Td px={["4", "4", "6"]}>
                 <Checkbox colorScheme="pink" />
               </Td>
               <Td>
@@ -106,18 +106,11 @@ export default function UserList() {
                   </Text>
                 </Box>
               </Td>
-              <Td>04 de janeiro de 2020</Td>
-              <Td>
-                <Button
-                  as="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="purple"
-                  leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                >
-                  Editar
-                </Button>
-              </Td>
+              {isWideVersion && (
+                <Fragment>
+                  <Td>04 de janeiro de 2020</Td> <EditTableButton />
+                </Fragment>
+              )}
             </Tr>
           </Tbody>
         </Table>

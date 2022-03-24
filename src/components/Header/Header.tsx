@@ -29,7 +29,7 @@ function Header() {
     >
       <BurguerMenu showBurguerMenu={isWideVersion} />
       <Logo />
-      <SearchBox />
+      {isWideVersion && <SearchBox />}
       <Flex align="center" ml="auto">
         <NotificationsNav />
         <Profile showProfileData={isWideVersion} />
