@@ -8,13 +8,12 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import { Input, Heading } from "../../components";
-import { UserLayout } from "./UserLayout";
+import { Input, Heading, Layout } from "../../components";
 
 export default function UserCreate() {
   return (
     <Box>
-      <UserLayout>
+      <Layout>
         <Heading title="Criar usuário" />
         <Divider my="6" borderColor="gray.700" />
         <VStack spacing="8">
@@ -37,7 +36,7 @@ export default function UserCreate() {
             <Button colorScheme="pink">Salvar</Button>
           </HStack>
         </Flex>
-      </UserLayout>
+      </Layout>
     </Box>
   );
 }

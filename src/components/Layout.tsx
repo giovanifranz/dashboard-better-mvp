@@ -1,12 +1,12 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { Header, Sidebar } from "../../components";
+import { Header, Sidebar } from ".";
 import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
 }
 
-function UserLayout({ children }: Props) {
+function Layout({ children }: Props) {
   return (
     <Box>
       <Header />
@@ -20,5 +20,5 @@ function UserLayout({ children }: Props) {
   );
 }
 
-export { UserLayout };
-export type { Props as UserLayoutProps };
+export { Layout };
+export type { Props as LayoutProps };

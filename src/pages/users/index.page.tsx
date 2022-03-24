@@ -14,8 +14,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine } from "react-icons/ri";
-import { Pagination, Heading } from "../../components";
-import { UserLayout } from "./UserLayout";
+import { Pagination, Heading, Layout } from "../../components";
 import dynamic from "next/dynamic";
 import { Fragment } from "react";
 
@@ -33,7 +32,7 @@ export default function UserList() {
 
   return (
     <Box>
-      <UserLayout>
+      <Layout>
         <Flex mb="8" justify="space-between" align="center">
           <Heading title="Usuários" />
           <Button
@@ -115,7 +114,7 @@ export default function UserList() {
           </Tbody>
         </Table>
         <Pagination />
-      </UserLayout>
+      </Layout>
     </Box>
   );
 }

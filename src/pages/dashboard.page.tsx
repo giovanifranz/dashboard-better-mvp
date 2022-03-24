@@ -1,5 +1,5 @@
-import { Flex, SimpleGrid, Box, Text } from "@chakra-ui/react";
-import { Header, Sidebar, Chart } from "../components";
+import { SimpleGrid, Box, Text } from "@chakra-ui/react";
+import { Chart, Layout } from "../components";
 
 const series = [
   {
@@ -10,11 +10,8 @@ const series = [
 
 export default function Dashboard() {
   return (
-    <Flex direction="column" h="100vh">
-      <Header />
-
-      <Flex width="100%" my="6" maxWidth={1480} mx="auto" px="6">
-        <Sidebar />
+    <Box>
+      <Layout>
         <SimpleGrid
           flex="1"
           gap="4"
@@ -34,7 +31,7 @@ export default function Dashboard() {
             <Chart series={series} />
           </Box>
         </SimpleGrid>
-      </Flex>
-    </Flex>
+      </Layout>
+    </Box>
   );
 }
