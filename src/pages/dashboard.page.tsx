@@ -10,28 +10,26 @@ const series = [
 
 export default function Dashboard() {
   return (
-    <Box>
-      <Layout>
-        <SimpleGrid
-          flex="1"
-          gap="4"
-          minChildWidth="320px"
-          alignItems="flex-start"
-        >
-          <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
-            <Text fontSize="lg" mb="4">
-              Inscritos da Semana
-            </Text>
-            <Chart series={series} />
-          </Box>
-          <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
-            <Text fontSize="lg" mb="4">
-              Taxa de Abertura
-            </Text>
-            <Chart series={series} />
-          </Box>
-        </SimpleGrid>
-      </Layout>
-    </Box>
+    <Layout>
+      <SimpleGrid
+        flex="1"
+        gap="4"
+        minChildWidth="320px"
+        alignItems="flex-start"
+      >
+        <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
+          <Text fontSize="lg" mb="4">
+            Inscritos da Semana
+          </Text>
+          <Chart series={series} />
+        </Box>
+        <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
+          <Text fontSize="lg" mb="4">
+            Taxa de Abertura
+          </Text>
+          <Chart series={series} />
+        </Box>
+      </SimpleGrid>
+    </Layout>
   );
 }
