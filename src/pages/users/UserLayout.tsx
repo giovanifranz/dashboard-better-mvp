@@ -12,7 +12,7 @@ function UserLayout({ children }: Props) {
       <Header />
       <Flex width="100%" my="6" maxWidth={1480} mx="auto" px="6">
         <Sidebar />
-        <Box flex="1" borderRadius={8} bg="gray.800" p="8">
+        <Box flex="1" borderRadius={8} bg="gray.800" p={["6", "8"]}>
           {children}
         </Box>
       </Flex>
