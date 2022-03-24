@@ -1,5 +1,6 @@
 import { SimpleGrid, Box, Text } from "@chakra-ui/react";
 import { Chart, Layout } from "../components";
+import { useState, useEffect } from "react";
 
 const series = [
   {
@@ -9,6 +10,12 @@ const series = [
 ];
 
 export default function Dashboard() {
+  const [chartState, setChartState] = useState<boolean>(false);
+
+  useEffect(() => {
+    setChartState(true);
+  }, []);
+
   return (
     <Layout>
       <SimpleGrid
@@ -21,13 +28,13 @@ export default function Dashboard() {
           <Text fontSize="lg" mb="4">
             Inscritos da Semana
           </Text>
-          <Chart series={series} />
+          {chartState && <Chart series={series} />}
         </Box>
         <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
           <Text fontSize="lg" mb="4">
             Taxa de Abertura
           </Text>
-          <Chart series={series} />
+          {chartState && <Chart series={series} />}
         </Box>
       </SimpleGrid>
     </Layout>
