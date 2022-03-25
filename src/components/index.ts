@@ -6,3 +6,4 @@ export * from "./Pagination";
 export * from "./Heading";
 export * from "./EditTableButton";
 export * from "./Layout";
+export * from "./ActiveLink";
