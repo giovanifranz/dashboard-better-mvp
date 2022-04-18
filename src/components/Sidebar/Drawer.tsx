@@ -1,31 +1,29 @@
+import { Fragment } from 'react'
 import {
   Drawer as ChakraDrawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
   DrawerBody,
-} from "@chakra-ui/react";
-import { SidebarNav } from ".";
-import { useSidebarDrawer } from "../../context/SidebarDrawerContext";
-import type { SidebarDrawerContextProps } from "../../context/SidebarDrawerContext";
-import { Fragment } from "react";
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+} from '@chakra-ui/react'
+
+import type { SidebarDrawerContextProps } from '../../context/SidebarDrawerContext'
+import { useSidebarDrawer } from '../../context/SidebarDrawerContext'
+
+import { SidebarNav } from '.'
 
 interface Props {
-  isDrawerSidebar?: boolean;
+  isDrawerSidebar?: boolean
 }
 
 function Drawer({ isDrawerSidebar }: Props) {
-  const { isOpen, onClose } = useSidebarDrawer() as SidebarDrawerContextProps;
+  const { isOpen, onClose } = useSidebarDrawer() as SidebarDrawerContextProps
 
   return (
     <Fragment>
       {isDrawerSidebar && (
-        <ChakraDrawer
-          isOpen={isOpen as boolean}
-          placement="left"
-          onClose={onClose as () => void}
-        >
+        <ChakraDrawer isOpen={isOpen as boolean} placement="left" onClose={onClose as () => void}>
           <DrawerOverlay>
             <DrawerContent bg="gray.800" p="4">
               <DrawerCloseButton mt="6" />
@@ -38,8 +36,8 @@ function Drawer({ isDrawerSidebar }: Props) {
         </ChakraDrawer>
       )}
     </Fragment>
-  );
+  )
 }
 
-export { Drawer };
-export type { Props as DrawerProps };
+export { Drawer }
+export type { Props as DrawerProps }

@@ -1,10 +1,7 @@
-import {
-  Heading as ChakraHeading,
-  HeadingProps as ChakraHeadingProps,
-} from "@chakra-ui/react";
+import { Heading as ChakraHeading, HeadingProps as ChakraHeadingProps } from '@chakra-ui/react'
 
 interface Props extends ChakraHeadingProps {
-  title: string;
+  title: string
 }
 
 function Heading({ title, ...rest }: Props) {
@@ -12,8 +9,8 @@ function Heading({ title, ...rest }: Props) {
     <ChakraHeading size="lg" fontWeight="normal" {...rest}>
       {title}
     </ChakraHeading>
-  );
+  )
 }
 
-export { Heading };
-export type { Props as HeadingProps };
+export { Heading }
+export type { Props as HeadingProps }

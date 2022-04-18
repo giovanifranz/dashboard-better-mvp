@@ -1,36 +1,32 @@
-import { SimpleGrid, Box, Text } from "@chakra-ui/react";
-import { Chart, Layout } from "../components";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react'
+import { Box, SimpleGrid, Text } from '@chakra-ui/react'
+
+import { Chart, Layout } from '../components'
 
 const series = [
   {
-    name: "series 1",
+    name: 'series 1',
     data: [31, 40, 28, 51, 42, 109, 100],
   },
-];
+]
 
 export default function Dashboard() {
-  const [chartState, setChartState] = useState<boolean>(false);
+  const [chartState, setChartState] = useState<boolean>(false)
 
   useEffect(() => {
-    setChartState(true);
-  }, []);
+    setChartState(true)
+  }, [])
 
   return (
     <Layout>
-      <SimpleGrid
-        flex="1"
-        gap="4"
-        minChildWidth="320px"
-        alignItems="flex-start"
-      >
-        <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
+      <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
+        <Box p={['6', '8']} bg="gray.800" borderRadius={8} pb="4">
           <Text fontSize="lg" mb="4">
             Inscritos da Semana
           </Text>
           {chartState && <Chart series={series} />}
         </Box>
-        <Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
+        <Box p={['6', '8']} bg="gray.800" borderRadius={8} pb="4">
           <Text fontSize="lg" mb="4">
             Taxa de Abertura
           </Text>
@@ -38,5 +34,5 @@ export default function Dashboard() {
         </Box>
       </SimpleGrid>
     </Layout>
-  );
+  )
 }

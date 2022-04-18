@@ -1,5 +1,5 @@
-import { Button, Icon, Td } from "@chakra-ui/react";
-import { RiPencilLine } from "react-icons/ri";
+import { RiPencilLine } from 'react-icons/ri'
+import { Button, Icon, Td } from '@chakra-ui/react'
 
 function EditTableButton() {
   return (
@@ -14,7 +14,7 @@ function EditTableButton() {
         Editar
       </Button>
     </Td>
-  );
+  )
 }
 
-export { EditTableButton };
+export { EditTableButton }

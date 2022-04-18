@@ -1,36 +1,29 @@
-import Link from "next/link";
-import type { LinkProps } from "next/link";
-import { cloneElement } from "react";
-import type { ReactElement } from "react";
-import { useRouter } from "next/router";
+import type { ReactElement } from 'react'
+import { cloneElement } from 'react'
+import type { LinkProps } from 'next/link'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 interface Props extends LinkProps {
-  children: ReactElement;
-  childMatchExactHref?: boolean;
+  children: ReactElement
+  childMatchExactHref?: boolean
 }
 
 function ActiveLink({ children, childMatchExactHref = false, ...rest }: Props) {
-  const { asPath } = useRouter();
+  const { asPath } = useRouter()
 
-  let isActive = false;
+  let isActive = false
 
   if (childMatchExactHref && (asPath === rest.href || asPath === rest.as)) {
-    isActive = true;
+    isActive = true
   }
 
-  if (
-    asPath.startsWith(String(rest.href)) ||
-    asPath.startsWith(String(rest.as))
-  ) {
-    isActive = true;
+  if (asPath.startsWith(String(rest.href)) || asPath.startsWith(String(rest.as))) {
+    isActive = true
   }
 
-  return (
-    <Link href={rest.href}>
-      {cloneElement(children, { color: isActive ? "pink.400" : "gray.50" })}
-    </Link>
-  );
+  return <Link href={rest.href}>{cloneElement(children, { color: isActive ? 'pink.400' : 'gray.50' })}</Link>
 }
 
-export { ActiveLink };
-export type { Props as ActiveLinkProps };
+export { ActiveLink }
+export type { Props as ActiveLinkProps }
