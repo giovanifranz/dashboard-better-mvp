@@ -1,8 +1,8 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text } from '@chakra-ui/react'
 
 interface Props {
-  name: string;
-  email: string;
+  name: string
+  email: string
 }
 
 function ProfileData({ name, email }: Props) {
@@ -13,8 +13,8 @@ function ProfileData({ name, email }: Props) {
         {email}
       </Text>
     </Box>
-  );
+  )
 }
 
-export { ProfileData };
-export type { Props as ProfileDataProps };
+export { ProfileData }
+export type { Props as ProfileDataProps }

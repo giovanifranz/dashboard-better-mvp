@@ -1,9 +1,10 @@
-import { Box, Flex } from "@chakra-ui/react";
-import { Header, Sidebar } from ".";
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react'
+import { Box, Flex } from '@chakra-ui/react'
+
+import { Header, Sidebar } from '.'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
 function Layout({ children }: Props) {
@@ -15,8 +16,8 @@ function Layout({ children }: Props) {
         {children}
       </Flex>
     </Box>
-  );
+  )
 }
 
-export { Layout };
-export type { Props as LayoutProps };
+export { Layout }
+export type { Props as LayoutProps }

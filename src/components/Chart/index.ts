@@ -1,2 +1,2 @@
-export * from "./Chart";
-export * from "./options";
+export * from './Chart'
+export * from './options'

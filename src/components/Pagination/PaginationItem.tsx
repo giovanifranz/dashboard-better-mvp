@@ -1,26 +1,23 @@
-import type { ButtonProps } from ".";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
+
+import type { ButtonProps } from '.'
 
 const CommonButton = dynamic<ButtonProps>(() =>
-  import("./CommonButton").then((module) => module.CommonButton)
-);
+  import('./CommonButton').then((module) => module.CommonButton),
+)
 
 const CurrentButton = dynamic<ButtonProps>(() =>
-  import("./CurrentButton").then((module) => module.CurrentButton)
-);
+  import('./CurrentButton').then((module) => module.CurrentButton),
+)
 
 interface Props {
-  number: number;
-  isCurrent?: boolean;
+  number: number
+  isCurrent?: boolean
 }
 
 function PaginationItem({ number, isCurrent = false }: Props) {
-  return isCurrent ? (
-    <CurrentButton number={number} />
-  ) : (
-    <CommonButton number={number} />
-  );
+  return isCurrent ? <CurrentButton number={number} /> : <CommonButton number={number} />
 }
 
-export { PaginationItem };
-export type { Props as PaginationItemProps };
+export { PaginationItem }
+export type { Props as PaginationItemProps }

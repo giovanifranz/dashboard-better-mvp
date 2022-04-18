@@ -1,15 +1,16 @@
-import { IconButton, Icon } from "@chakra-ui/react";
-import { useSidebarDrawer } from "../../context/SidebarDrawerContext";
-import type { SidebarDrawerContextProps } from "../../context/SidebarDrawerContext";
-import { Fragment } from "react";
-import { RiMenuLine } from "react-icons/ri";
+import { Fragment } from 'react'
+import { RiMenuLine } from 'react-icons/ri'
+import { Icon, IconButton } from '@chakra-ui/react'
+
+import type { SidebarDrawerContextProps } from '../../context/SidebarDrawerContext'
+import { useSidebarDrawer } from '../../context/SidebarDrawerContext'
 
 interface Props {
-  showBurguerMenu?: boolean;
+  showBurguerMenu?: boolean
 }
 
 function BurguerMenu({ showBurguerMenu }: Props) {
-  const { onOpen } = useSidebarDrawer() as SidebarDrawerContextProps;
+  const { onOpen } = useSidebarDrawer() as SidebarDrawerContextProps
 
   return (
     <Fragment>
@@ -25,8 +26,8 @@ function BurguerMenu({ showBurguerMenu }: Props) {
         />
       )}
     </Fragment>
-  );
+  )
 }
 
-export { BurguerMenu };
-export type { Props as BurguerMenuProps };
+export { BurguerMenu }
+export type { Props as BurguerMenuProps }

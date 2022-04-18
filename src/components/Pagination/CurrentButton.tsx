@@ -1,5 +1,6 @@
-import { Button } from "@chakra-ui/react";
-import { ButtonProps } from ".";
+import { Button } from '@chakra-ui/react'
+
+import { ButtonProps } from '.'
 
 function CurrentButton({ number }: ButtonProps) {
   return (
@@ -9,11 +10,11 @@ function CurrentButton({ number }: ButtonProps) {
       width="4"
       colorScheme="pink"
       disabled
-      _disabled={{ bgColor: "pink.500", cursor: "default" }}
+      _disabled={{ bgColor: 'pink.500', cursor: 'default' }}
     >
       {number}
     </Button>
-  );
+  )
 }
 
-export { CurrentButton };
+export { CurrentButton }
