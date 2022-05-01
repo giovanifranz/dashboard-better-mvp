@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import {
   Drawer as ChakraDrawer,
   DrawerBody,
@@ -20,22 +19,22 @@ interface Props {
 function Drawer({ isDrawerSidebar }: Props) {
   const { isOpen, onClose } = useSidebarDrawer() as SidebarDrawerContextProps
 
+  if (!isDrawerSidebar) {
+    return null
+  }
+
   return (
-    <Fragment>
-      {isDrawerSidebar && (
-        <ChakraDrawer isOpen={isOpen as boolean} placement="left" onClose={onClose as () => void}>
-          <DrawerOverlay>
-            <DrawerContent bg="gray.800" p="4">
-              <DrawerCloseButton mt="6" />
-              <DrawerHeader>Navegação</DrawerHeader>
-              <DrawerBody>
-                <SidebarNav />
-              </DrawerBody>
-            </DrawerContent>
-          </DrawerOverlay>
-        </ChakraDrawer>
-      )}
-    </Fragment>
+    <ChakraDrawer isOpen={isOpen as boolean} placement="left" onClose={onClose as () => void}>
+      <DrawerOverlay>
+        <DrawerContent bg="gray.800" p="4">
+          <DrawerCloseButton mt="6" />
+          <DrawerHeader>Navegação</DrawerHeader>
+          <DrawerBody>
+            <SidebarNav />
+          </DrawerBody>
+        </DrawerContent>
+      </DrawerOverlay>
+    </ChakraDrawer>
   )
 }
 

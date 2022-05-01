@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { RiAddLine } from 'react-icons/ri'
 import {
   Box,
@@ -72,9 +71,9 @@ export default function UserList() {
                 </Box>
               </Td>
               {isWideVersion && (
-                <Fragment>
+                <>
                   <Td>04 de janeiro de 2020</Td> <EditTableButton />
-                </Fragment>
+                </>
               )}
             </Tr>
             <Tr>
@@ -90,9 +89,9 @@ export default function UserList() {
                 </Box>
               </Td>
               {isWideVersion && (
-                <Fragment>
+                <>
                   <Td>04 de janeiro de 2020</Td> <EditTableButton />
-                </Fragment>
+                </>
               )}
             </Tr>
             <Tr>
@@ -108,9 +107,9 @@ export default function UserList() {
                 </Box>
               </Td>
               {isWideVersion && (
-                <Fragment>
+                <>
                   <Td>04 de janeiro de 2020</Td> <EditTableButton />
-                </Fragment>
+                </>
               )}
             </Tr>
           </Tbody>

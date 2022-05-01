@@ -1,10 +1,11 @@
 import type ApexTypes from 'react-apexcharts/types/react-apexcharts'
 import dynamic from 'next/dynamic'
+
+import { options } from '.'
+
 const ApexChar = dynamic<ApexTypes['props']>(() => import('react-apexcharts'), {
   ssr: false,
 })
-
-import { options } from '.'
 
 interface Props {
   series: ApexTypes['props']['series']

@@ -25,5 +25,5 @@ function SidebarDrawerProvider({ children }: Props) {
 
 const useSidebarDrawer = () => useContext(SidebarDrawerContext)
 
-export { SidebarDrawerProvider, SidebarDrawerContext, useSidebarDrawer }
-export type { Props as SidebarDrawerProviderProps, SidebarDrawerContextProps }
+export { SidebarDrawerContext, SidebarDrawerProvider, useSidebarDrawer }
+export type { SidebarDrawerContextProps, Props as SidebarDrawerProviderProps }

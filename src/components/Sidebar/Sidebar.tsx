@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { Box, useBreakpointValue } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
@@ -9,17 +8,16 @@ const Drawer = dynamic<DrawerProps>(() => import('./Drawer').then((module) => mo
 
 function Sidebar() {
   const isDrawerSidebar = useBreakpointValue({ base: true, lg: false })
-  return (
-    <Fragment>
-      {isDrawerSidebar ? (
-        <Drawer isDrawerSidebar={isDrawerSidebar} />
-      ) : (
-        <Box as="aside" width="64" mr="8">
-          <SidebarNav />
-        </Box>
-      )}
-    </Fragment>
-  )
+
+  if (!isDrawerSidebar) {
+    return (
+      <Box as="aside" width="64" mr="8">
+        <SidebarNav />
+      </Box>
+    )
+  }
+
+  return <Drawer isDrawerSidebar={isDrawerSidebar} />
 }
 
 export { Sidebar }

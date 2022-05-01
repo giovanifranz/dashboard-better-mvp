@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Box, Stack, Text } from '@chakra-ui/react'
+
 interface Props {
   title: string
   children: ReactNode
